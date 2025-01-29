@@ -66,7 +66,7 @@
         <Setter Property="Shadow">
             <Shadow
                 Brush="Black"
-                Offset="6.6"
+                Offset="6,6"
                 Radius="12"
                 Opacity="0.5"/>
         </Setter>
