@@ -4,6 +4,8 @@ using Microsoft.UI.Windowing;
 using Windows.Graphics;
 #endif
 
+using Views;
+
 namespace ScientificCalculator
 {
     public partial class App : Application
@@ -26,7 +28,7 @@ namespace ScientificCalculator
                         appWindow.Resize(new SizeInt32(WindowWidth, WindowHeight));
                     });
 #endif
-            MainPage = new AppShell();
+            MainPage = new CalculatorPage();
         }
     }
 }
