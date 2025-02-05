@@ -300,7 +300,7 @@
             Grid.Row="6"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,5,-100, 4"
+            Margin="3,2,-105,-1.75"
             Command="{Binding ResetCommand}"
             CommandParameter="AC"/>
 
@@ -312,7 +312,7 @@
             Grid.Row="7"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1.5,1,1,0"
             Command="{Binding NumberInputCommand}"
             CommandParameter="4"/>
 
@@ -342,7 +342,7 @@
             Grid.Row="7"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="3,3,-1,-1"
             Command="{Binding MathOperatorCommand}"
             CommandParameter="×"/>
 
@@ -352,7 +352,7 @@
             Grid.Row="7"
             Grid.Column="4"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="2.2,3,-1,-1"
             Command="{Binding MathOperatorCommand}"
             CommandParameter="÷"/>
         
@@ -363,7 +363,7 @@
             Grid.Row="8"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="6,4,6,4"
             Command="{Binding NumberInputCommand}"
             CommandParameter="1"/>
 
@@ -373,7 +373,7 @@
             Grid.Row="8"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="6,4,6,4"
             Command="{Binding NumberInputCommand}"
             CommandParameter="2"/>
 
@@ -383,7 +383,7 @@
             Grid.Row="8"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="6,4,0,4"
             Command="{Binding NumberInputCommand}"
             CommandParameter="3"/>
 
@@ -393,7 +393,7 @@
             Grid.Row="8"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="3,2,-1,1"
             Command="{Binding MathOperatorCommand}"
             CommandParameter="+"/>
 
@@ -403,7 +403,7 @@
             Grid.Row="8"
             Grid.Column="4"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="2.2,2,-1,1"
             Command="{Binding MathOperatorCommand}"
             CommandParameter="-"/>
         
@@ -415,7 +415,7 @@
             Grid.Row="9"
             Grid.Column="0"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="2,1,1,0"
             Command="{Binding NumberInputCommand}"
             CommandParameter="0"/>
 
@@ -425,7 +425,7 @@
             Grid.Row="9"
             Grid.Column="1"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1.5,1,1,0"
             Command="{Binding NumberInputCommand}"
             CommandParameter=","/>
 
@@ -435,7 +435,7 @@
             Grid.Row="9"
             Grid.Column="2"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="1.5,1,1,0"
             Command="{Binding BackspaceCommand}"
             CommandParameter="⌫"/>
 
@@ -445,7 +445,7 @@
             Grid.Row="9"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,5,-100, 4"
+            Margin="3,0,-105, 4"
             Command="{Binding CalculateCommand}"
             CommandParameter="="/>
     </Grid>
