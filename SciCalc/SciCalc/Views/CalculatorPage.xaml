@@ -445,7 +445,7 @@
             Grid.Row="9"
             Grid.Column="3"
             ZIndex="1"
-            Margin="6,10,6,4"
+            Margin="6,5,-100, 4"
             Command="{Binding CalculateCommand}"
             CommandParameter="="/>
     </Grid>
