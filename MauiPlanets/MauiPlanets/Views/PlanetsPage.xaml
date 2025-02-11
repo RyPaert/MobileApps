@@ -22,6 +22,18 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Tapped="GridArea_Tapped"/>
         </Grid.GestureRecognizers>
+
+        <VerticalStackLayout
+            Margin="0,52,24,0"
+            HorizontalOptions="End"
+            Spacing="20">
+
+            <Label
+                Text="MENU"
+                Style="{StaticResource PageHeaderStyle}"
+                HorizontalOptions="End"/>
+
+        </VerticalStackLayout>
         
     </Grid>
 </ContentPage>
