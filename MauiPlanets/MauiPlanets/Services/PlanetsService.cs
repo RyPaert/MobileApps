@@ -151,6 +151,79 @@ namespace Services
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg"
                 }
             },
+            new()
+            {
+                Name = "Makemake",
+                Subtitle = "Makemake was named after the Rapanui god of fertility.",
+                HeroImage = "makemake.png",
+                Description = "Dwarf planet Makemake – along with Pluto, Haumea, and Eris – is located in the Kuiper Belt, a donut-shaped region of icy " +
+                            "bodies beyond the orbit of Neptune. Makemake is slightly smaller than Pluto, " +
+                            "and is the second-brightest object in the Kuiper Belt as seen from Earth while Pluto is the brightest. " +
+                            "It takes about 305 Earth years for this dwarf planet to make one trip around the Sun.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://upload.wikimedia.org/wikipedia/commons/2/29/Makemake_and_its_moon.jpg"
+                }
+            },
+            new()
+            {
+                Name = "Eris",
+                Subtitle = "Eris is one of largest the dwarf planets in our solar system. It's about the same size as Pluto, but it's three times farther from the Sun.",
+                HeroImage = "eris.png",
+                Description = "The discovery of Eris help trigger a debate in the scientific community that led to the International Astronomical Union's decision in 2006 to clarify the definition of a planet. Pluto, Eris, and other similar objects are now classified as dwarf planets.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Hubble_Dysnomia_orbit_overlay.jpg/1280px-Hubble_Dysnomia_orbit_overlay.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Eris%2C_Earth_%26_Moon_size_comparison.png/250px-Eris%2C_Earth_%26_Moon_size_comparison.png"
+                }
+            },
+            new()
+            {
+                Name = "Ceres",
+                Subtitle = "Dwarf planet Ceres is the largest object in the asteroid belt between Mars and Jupiter. It was explored by NASA's Dawn spacecraft.",
+                HeroImage = "ceres.png",
+                Description = "Ceres was the first member of the asteroid belt to be discovered when Giuseppe Piazzi spotted it in 1801. Called an asteroid for many years, Ceres is so much bigger and so different from its rocky neighbors that scientists classified it as a dwarf planet in 2006. When NASA's Dawn arrived in 2015, Ceres became the first dwarf planet to receive a visit from a spacecraft.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg/290px-Ceres_-_RC3_-_Haulani_Crater_%2822381131691%29_%28cropped%29.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Ceres%2C_Earth_%26_Moon_size_comparison.jpg/300px-Ceres%2C_Earth_%26_Moon_size_comparison.jpg"
+                }
+            },
+            new()
+            {
+                Name = "Pluto",
+                Subtitle = "Pluto was once our solar system's ninth planet, but has been reclassified as a dwarf planet. It's located in the Kuiper Belt.",
+                HeroImage = "pluto.png",
+                Description = "Pluto was long considered our ninth planet, but the International Astronomical Union reclassified Pluto as a dwarf planet in 2006. NASA's New Horizons was the first spacecraft to explore Pluto up close, flying by in 2015.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pluto_in_True_Color_-_High-Res.jpg/290px-Pluto_in_True_Color_-_High-Res.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pluto-01_Stern_03_Pluto_Color_TXT.jpg/240px-Pluto-01_Stern_03_Pluto_Color_TXT.jpg"
+                }
+            },
+            new()
+            {
+                Name = "Haumea",
+                Subtitle = "Haumea is an oval-shaped dwarf planet that is one of the fastest rotating large objects in our solar system. The fast spin distorts Haumea's shape, making this dwarf planet look like a football.",
+                HeroImage = "haumea.png",
+                Description = "Two teams claim credit for discovering Haumea citing evidence from observations made in 2003 and 2004. The International Astronomical Union’s Gazetteer of Planetary Nomenclature lists the discovery location as Sierra Nevada Observatory in Spain on March 7, 2003, but no official discoverer is listed. Haumea is named after the Hawaiian goddess of fertility.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Haumea_Hubble.png/290px-Haumea_Hubble.png",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Haumea_Rotation.gif/213px-Haumea_Rotation.gif"
+                }
+            },
+
         };
 
         public static List<Planet> GetFeaturedPlanets()
