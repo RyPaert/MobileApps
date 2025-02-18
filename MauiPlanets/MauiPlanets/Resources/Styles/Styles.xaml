@@ -44,7 +44,7 @@
     <Style TargetType="Label" x:Key="IntroPageTextStyle" BasedOn="{StaticResource BaseRegularLabelStyle}">
         <Setter Property="FontSize" Value="16" />
         <Setter Property="LineHeight" Value="1.15" />
-        <Setter Property="TextColor" Value="#CCCCCC" />
+        <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
     </Style>
 
     <Style TargetType="Label" x:Key="PageHeaderStyle" BasedOn="{StaticResource BaseBoldLabelStyle}">
@@ -55,6 +55,11 @@
     <Style TargetType="Label" x:Key="PageHeaderSubtitleStyle" BasedOn="{StaticResource BaseMediumLabelStyle}">
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="MenuLabelStyle" BasedOn="{StaticResource BaseRegularLabelStyle}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="#CCCCCC" />
     </Style>
 
     <Style TargetType="Label" x:Key="PageSubHeaderStyle" BasedOn="{StaticResource BaseMediumLabelStyle}">
