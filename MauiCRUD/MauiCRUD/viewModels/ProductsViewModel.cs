@@ -1,12 +1,11 @@
-﻿
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Data;
 using Models;
 using System.Collections.ObjectModel;
 
 
-namespace viewModels
+namespace ViewModels
 {
     public partial class ProductsViewModel : ObservableObject
     {
@@ -42,10 +41,10 @@ namespace viewModels
                     {
                         Products.Add(product);
                     }
-                } 
-            }, "Fething products...");
+                }
+            }, "Fetching products...");
         }
-        
+
         private async Task ExecuteAsync(Func<Task> operation, string? busyText = null)
         {
             IsBusy = true;
@@ -56,6 +55,7 @@ namespace viewModels
             }
             catch (Exception)
             {
+
                 throw;
             }
             finally
@@ -64,6 +64,7 @@ namespace viewModels
                 BusyText = "Processing...";
             }
         }
+
         [RelayCommand]
         private void SetOperatingProduct(Product? product) => OperatingProduct = product ?? new();
 
@@ -87,13 +88,12 @@ namespace viewModels
             {
                 if (OperatingProduct.Id == 0)
                 {
-                    await _context.AddItemsAsync<Product>(OperatingProduct);
+                    await _context.AddItemAsync<Product>(OperatingProduct);
                     Products.Add(OperatingProduct);
-
                 }
                 else
                 {
-                    if (await _context.UpdateItemsAsync<Product>(OperatingProduct))
+                    if (await _context.UpdateItemAsync<Product>(OperatingProduct))
                     {
                         var productCopy = OperatingProduct.Clone();
 
@@ -117,7 +117,7 @@ namespace viewModels
         {
             await ExecuteAsync(async () =>
             {
-                if (await _context.DeleteItemsByKeyAsync<Product>(id))
+                if (await _context.DeleteItemByKeyAsync<Product>(id))
                 {
                     var product = Products.FirstOrDefault(x => x.Id == id);
                     Products.Remove(product);

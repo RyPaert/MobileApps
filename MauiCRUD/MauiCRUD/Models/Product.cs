@@ -18,11 +18,11 @@ namespace Models
             {
                 return (false, $"{nameof(Name)} is required.");
             }
-            else if (Price <= 0) 
+            else if(Price <= 0)
             {
-                return (false, $"{nameof(Price)} should be greater than 0.");
+                return (false, $"{nameof(Price)} should be greater than 0");
             }
-            return(true,null);
+            return (true, null);
         }
     }
 }

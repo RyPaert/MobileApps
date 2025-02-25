@@ -1,4 +1,4 @@
-﻿using viewModels;
+﻿using ViewModels;
 
 namespace MauiCRUD
 {
@@ -6,7 +6,11 @@ namespace MauiCRUD
     {
         private readonly ProductsViewModel _productsViewModel;
 
-        public MainPage(ProductsViewModel productsViewModel)
+
+        public MainPage
+            (
+                ProductsViewModel productsViewModel
+            )
         {
             InitializeComponent();
             BindingContext = productsViewModel;
@@ -19,4 +23,5 @@ namespace MauiCRUD
             await _productsViewModel.LoadProductsAsync();
         }
     }
+
 }
