@@ -6,7 +6,7 @@ namespace Data
 {
     public class DatabaseContext
     {
-        private const string DbName = "CRUDdb3";
+        private const string DbName = "CRUDdb4";
         private static string DbPath => Path.Combine(".", DbName);
 
         private SQLiteAsyncConnection _connection;
