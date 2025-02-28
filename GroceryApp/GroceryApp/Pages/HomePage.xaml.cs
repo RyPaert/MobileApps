@@ -1,4 +1,4 @@
-namespace Views;
+namespace Pages;
 
 public partial class HomePage : ContentPage
 {
