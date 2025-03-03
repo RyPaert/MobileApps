@@ -6,6 +6,42 @@
              x:DataType="vm:HomePageViewModel"
              xmlns:vm="clr-namespace:ViewModels"
              xmlns:models="clr-namespace:Models">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="H1">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 10"/>
+            </Style>
+            <Style TargetType="Label" x:Key="H2">
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 8"/>
+            </Style>
+            <Style TargetType="Label" x:Key="H3">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 6"/>
+            </Style>
+            <Style TargetType="Label" x:Key="H4">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 4"/>
+            </Style>
+            <Style TargetType="Label" x:Key="H5">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 2"/>
+            </Style>
+            <Style TargetType="Label" x:Key="H6">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0, 1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <VerticalStackLayout>
         <Label>
             <Label.FormattedText>
@@ -22,12 +58,19 @@
             </Label.FormattedText>
         </Label>
 
-        <BoxView HeightRequest="25"
+        <BoxView HeightRequest="15"
+                 Color="Transparent"/>
+
+        <Label Text="Shop by category"
+               Style="{StaticResource H2}"/>
+
+        <BoxView HeightRequest="5"
                  Color="Transparent"/>
 
         <CollectionView ItemsSource="{Binding Categories}">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Horizontal"/>
+                <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="12"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Category">
@@ -57,5 +100,11 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <BoxView HeightRequest="15"
+                 Color="Transparent"/>
+
+        <Label Text="Popular"
+               Style="{StaticResource H2}"/>
     </VerticalStackLayout>
 </ContentPage>
