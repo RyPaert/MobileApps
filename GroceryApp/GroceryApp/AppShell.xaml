@@ -21,22 +21,22 @@
         Route="MainPage" />-->
     <TabBar>
         <ShellContent Title="Home"
-                      Icon="bxs-home-alt-2.svg"
+                      Icon="bxshomealt.svg"
                       ContentTemplate="{DataTemplate pages:HomePage}"
                       Route="HomePage"/>
         
         <ShellContent Title="Categories"
-                      Icon="bx-category.svg"
+                      Icon="bxcategory.svg"
                       ContentTemplate="{DataTemplate pages:CategoriesPage}"
                       Route="CategoriesPage"/>
         
         <ShellContent Title="HelpPage"
-                      Icon="bx-help-circle.svg"
+                      Icon="bxhelpcircle.svg"
                       ContentTemplate="{DataTemplate pages:HelpPage}"
                       Route="HelpPage"/>
         
         <ShellContent Title="BasketPage"
-                      Icon="bx-list-ul.svg"
+                      Icon="bxlistul.svg"
                       ContentTemplate="{DataTemplate pages:BasketPage}"
                       Route="BasketPage"/>
         
