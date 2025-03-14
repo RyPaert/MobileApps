@@ -94,4 +94,8 @@
 	  <Folder Include="Views\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\GroceryApp.Shared\GroceryApp.Shared.csproj" />
+	</ItemGroup>
+
 </Project>
