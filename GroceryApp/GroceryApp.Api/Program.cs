@@ -19,8 +19,8 @@ namespace GroceryApp.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddDbContext<DataContext>(options => 
-            options.UseSqlServer(builder.Configuration.GetConnectionString(DatabaseConstants.GroceryConnectionStringKey)))
+            builder.Services.AddDbContext<DataContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString(DatabaseConstants.GroceryConnectionStringKey)));
 
             var app = builder.Build();
 
@@ -33,7 +33,6 @@ namespace GroceryApp.Api
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
 
             var summaries = new[]
             {
@@ -55,7 +54,20 @@ namespace GroceryApp.Api
             .WithName("GetWeatherForecast")
             .WithOpenApi();
 
-            app.Run();
+
+            var masterGroup = app.MapGroup("/master").AllowAnonymous();
+            masterGroup.MapGet("/categories", async (DataContext context) =>
+                await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+             );
+            masterGroup.MapGet("/offers", async (DataContext context) =>
+                await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+             );
+
+            app.Run("https://localhost:12345");
         }
     }
 }

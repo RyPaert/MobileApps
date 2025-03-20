@@ -14,10 +14,11 @@ namespace GroceryApp.Api.Data.Entities
         [MaxLength(150)]
         public string? Address2 { get; set; }
         [Required, MaxLength(6)]
-        public string Zip {  get; set; }
+        public string Zip { get; set; }
         [MaxLength(15)]
         public string? Name { get; set; }
         public bool IsPrimary { get; set; }
 
         public virtual User User { get; set; }
+    }
 }

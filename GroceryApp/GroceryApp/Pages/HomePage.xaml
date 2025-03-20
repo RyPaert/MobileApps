@@ -6,10 +6,14 @@
              x:DataType="vm:HomePageViewModel"
              xmlns:vm="clr-namespace:ViewModels"
              xmlns:models="clr-namespace:Models"
-             xmlns:controls="clr-namespace:Controls">
+             xmlns:converters="clr-namespace:Converter"
+    xmlns:controls="clr-namespace:Controls">
 
     <ContentPage.Resources>
         <ResourceDictionary>
+
+            <converters:StringToColorConverter x:Key="StringToColor"/>
+
             <Style TargetType="Label" x:Key="H1">
                 <Setter Property="FontSize" Value="24"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -84,7 +88,7 @@
                             HeightRequest="180"
                             WidthRequest="300">
                         <Grid RowDefinitions="Auto, *, Auto">
-                            <BoxView Color="{Binding BgColor}"
+                            <BoxView Color="{Binding BgColor, Converter={StaticResource StringToColor}}"
                                      Opacity="0.5"/>
                             <Grid RowDefinitions="Auto, *, Auto"
                                   Padding="15">
