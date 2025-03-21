@@ -32,7 +32,7 @@ namespace GroceryApp.Api.Data.Entities
 
         }
 
-        public static IEnumerable<Category> GetInitialCategories()
+        public static IEnumerable<Category> GetInitialData()
         {
                 var categories = new List<Category>();
 

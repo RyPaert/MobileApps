@@ -1,10 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using GroceryApp.Shared.Dtos;
 using Models;
 using Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using static Services.OffersService;
 
 namespace ViewModels
 {
@@ -12,8 +11,9 @@ namespace ViewModels
     {
         private readonly CategoryService _categoryService;
         private readonly OffersService _offersService;
+        private readonly ProductsService _productsService;
 
-        public HomePageViewModel(CategoryService categoryService, OffersService offersService)
+        public HomePageViewModel(CategoryService categoryService, OffersService offersService, ProductsService productsService)
         {
             _categoryService = categoryService;
             _offersService = offersService;
@@ -21,16 +21,33 @@ namespace ViewModels
         public ObservableCollection<Category> Categories { get; set; } = new();
         public ObservableCollection<Offer> Offers { get; set; } = new();
 
+        public ObservableCollection<ProductDto> PopularProducts { get; set; } = new();
+
+        [ObservableProperty]
+        private bool _isBusy;
+
         public async Task InitializeAsync()
         {
-            var offerTask = _offersService.GetActiveOffersAsync();
-            foreach (var category in await _categoryService.GetMainCategoriesAsync())
+            try
             {
-                Categories.Add(category);
+                var offerTask = _offersService.GetActiveOffersAsync();
+                var popularProductsTask = _productsService.GetPopularProductsAsync();
+                foreach (var category in await _categoryService.GetMainCategoriesAsync())
+                {
+                    Categories.Add(category);
+                }
+                foreach (var offer in await _offersService.GetActiveOffersAsync())
+                {
+                    Offers.Add(offer);
+                }
+                foreach (var product in await popularProductsTask)
+                {
+                    PopularProducts.Add(product);
+                }
             }
-            foreach (var offer in await _offersService.GetActiveOffersAsync())
+            finally
             {
-                Offers.Add(offer);
+                IsBusy = false;
             }
         }
     }

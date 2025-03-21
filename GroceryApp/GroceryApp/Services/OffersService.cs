@@ -1,33 +1,31 @@
 ﻿using System.Text.Json;
 using Constants;
+using GroceryApp.Shared.Dtos;
 using Models;
 
 namespace Services
 {
-    public class OffersService
+    public class OffersService : BaseApiService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        public OffersService(IHttpClientFactory httpClientFactory)
+        public OffersService(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {
-            _httpClientFactory = httpClientFactory;
         }
         public async Task<IEnumerable<Offer>> GetActiveOffersAsync()
         {
-            var httpClient = _httpClientFactory.CreateClient(AppConstants.HttpClientName);
-
-            var response = await httpClient.GetAsync("/masters/offers");
-            if (response.IsSuccessStatusCode)
+            var response = await HttpClient.GetAsync("/masters/offers");
+            return await HandleApiResponseAsync(response, Enumerable.Empty<Offer>());
+        }
+        public class ProductsService : BaseApiService
+        {
+            public ProductsService(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
             {
-                var content = await response.Content.ReadAsStringAsync();
-                if (!string.IsNullOrEmpty(content))
-                {
-                    return JsonSerializer.Deserialize<IEnumerable<Offer>>(content, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-                }
             }
-            return Enumerable.Empty<Offer>();
+            public async Task<IEnumerable<ProductDto>> GetPopularProductsAsync()
+            {
+                var response = await HttpClient.GetAsync("/popular-products");
+                return await HandleApiResponseAsync(response, Enumerable.Empty<ProductDto>());
             }
         }
     }
+}

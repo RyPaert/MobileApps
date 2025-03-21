@@ -5,6 +5,7 @@ using ViewModels;
 using Pages;
 using Interfaces;
 using System.Runtime.InteropServices;
+using static Services.OffersService;
 
 namespace GroceryApp
 {
@@ -26,9 +27,8 @@ namespace GroceryApp
                 return new Platforms.Android.AndroidHttpMessageHandler();
 #elif IOS
                 return new Platforms.iOS.IosHttpMessageHandler();
-#else
-                throw new PlatformNotSupportedException("fuc koff");
 #endif
+                return null;
             });
 
             builder.Services.AddHttpClient(Constants.AppConstants.HttpClientName, httpClient =>
@@ -48,6 +48,7 @@ namespace GroceryApp
             builder.Services.AddSingleton<HomePageViewModel>();
             builder.Services.AddSingleton<HomePage>();
             builder.Services.AddTransient<OffersService>();
+            builder.Services.AddSingleton<ProductsService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
